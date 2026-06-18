@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://inae-platform.onrender.com', // Pon tu URL real de Render, sin la barra / al final
 })
 
 api.interceptors.request.use((config) => {
