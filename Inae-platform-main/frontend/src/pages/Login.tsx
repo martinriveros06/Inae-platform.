@@ -35,25 +35,39 @@ export default function Login() {
     <div className="min-h-screen w-full flex flex-col lg:flex-row bg-[#FDFBF7]">
       
       {/* ================= COLUMNA IZQUIERDA: DISEÑO EMOCIONAL ================= */}
-      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-black">
+        {/* Imagen con colores naturales */}
         <img 
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" 
           alt="Estudiantes felices"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-85"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#6B8E23]/95 via-[#6B8E23]/40 to-transparent flex flex-col justify-end p-12 text-white">
-          <h1 className="text-5xl font-bold mb-4 font-sans tracking-tight">Tu bienestar importa</h1>
-          <p className="text-xl mb-8 max-w-md opacity-90">
-            Un espacio seguro diseñado para acompañarte, entregarte herramientas y cuidar tu salud mental durante tu vida académica.
-          </p>
+        {/* Gradiente negro/neutro para legibilidad */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-between p-12 text-white">
           
-          <div className="flex items-start gap-4 bg-white/10 p-5 rounded-2xl backdrop-blur-md border border-white/10 max-w-md">
-            <svg className="mt-1 w-8 h-8 text-white fill-white animate-pulse" viewBox="0 0 24 24">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-            <div>
-              <h3 className="font-bold text-lg">¿Cómo te sientes hoy?</h3>
-              <p className="text-sm opacity-80">Recuerda que dentro de la plataforma puedes registrar tu estado de ánimo diario de forma segura.</p>
+          {/* Logo y Subtítulo INAE */}
+          <div className="mt-4">
+            <div className="inline-block bg-[#cc0000] px-4 py-1 rounded mb-3 shadow-lg">
+              <span className="text-white font-bold text-3xl tracking-widest">INAE</span>
+            </div>
+            <p className="text-white/90 text-sm font-medium tracking-wide">Plataforma de Bienestar Estudiantil</p>
+            <p className="text-white/60 text-xs mt-1">INACAP</p>
+          </div>
+
+          <div>
+            <h1 className="text-5xl font-bold mb-4 font-sans tracking-tight">Tu bienestar importa</h1>
+            <p className="text-xl mb-8 max-w-md text-gray-200">
+              Un espacio seguro diseñado para acompañarte, entregarte herramientas y cuidar tu salud mental durante tu vida académica.
+            </p>
+            
+            <div className="flex items-start gap-4 bg-black/30 p-5 rounded-2xl backdrop-blur-md border border-white/10 max-w-md">
+              <svg className="mt-1 w-8 h-8 text-white fill-white animate-pulse" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              <div>
+                <h3 className="font-bold text-lg">¿Cómo te sientes hoy?</h3>
+                <p className="text-sm text-gray-300">Recuerda que dentro de la plataforma puedes registrar tu estado de ánimo diario de forma segura.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -64,8 +78,8 @@ export default function Login() {
         <div className="w-full max-w-md space-y-8 bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
           
           <div className="text-center">
-            <div className="inline-block p-3 bg-[#6B8E23]/10 rounded-2xl mb-4">
-              <svg className="w-8 h-8 text-[#6B8E23]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-block p-3 bg-gray-50 rounded-2xl mb-4 border border-gray-100">
+              <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
               </svg>
             </div>
@@ -78,7 +92,7 @@ export default function Login() {
               <label className="block text-sm font-semibold text-gray-600 mb-1">Correo institucional</label>
               <input
                 type="email"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-[#6B8E23] focus:ring-1 focus:ring-[#6B8E23] transition-colors"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-[#cc0000] focus:ring-1 focus:ring-[#cc0000] transition-colors"
                 placeholder="usuario@inacap.cl"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -89,14 +103,14 @@ export default function Login() {
               <label className="block text-sm font-semibold text-gray-600 mb-1">Contraseña</label>
               <input
                 type="password"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-[#6B8E23] focus:ring-1 focus:ring-[#6B8E23] transition-colors"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-[#cc0000] focus:ring-1 focus:ring-[#cc0000] transition-colors"
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
-            <button type="submit" className="w-full py-4 bg-[#6B8E23] hover:bg-[#55721c] text-white rounded-xl font-bold transition-all transform hover:scale-[1.01] shadow-lg shadow-[#6B8E23]/20 mt-2" disabled={loading}>
+            <button type="submit" className="w-full py-4 bg-[#cc0000] hover:bg-[#990000] text-white rounded-xl font-bold transition-all transform hover:scale-[1.01] shadow-lg shadow-red-900/20 mt-2" disabled={loading}>
               {loading ? 'Ingresando...' : 'Ingresar a la plataforma'}
             </button>
           </form>
@@ -112,7 +126,7 @@ export default function Login() {
                   className="w-full flex justify-between items-center px-4 py-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors border border-gray-100"
                 >
                   <span className="font-semibold text-gray-600">{acc.label}</span>
-                  <span className="text-[#6B8E23] font-mono text-sm font-medium">{acc.email}</span>
+                  <span className="text-gray-500 font-mono text-sm font-medium">{acc.email}</span>
                 </button>
               ))}
             </div>
