@@ -9,6 +9,7 @@ import EmotionalMonitor from './pages/EmotionalMonitor'
 import Agenda from './pages/Agenda'
 import Mentors from './pages/Mentors'
 import Alerts from './pages/Alerts'
+import Landing from './pages/Landing'
 
 function ProtectedLayout() {
   const { user, isLoading } = useAuth()
@@ -55,6 +56,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<PublicRoute />}>
+            <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
           </Route>
           <Route element={<ProtectedLayout />}>
